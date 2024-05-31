@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HubController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/checkout', [HubController::class, 'index'])->name('checkout.index');
