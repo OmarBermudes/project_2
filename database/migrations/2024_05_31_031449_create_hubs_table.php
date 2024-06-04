@@ -18,12 +18,13 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->string('title')->unique();
             $table->longText('description')->nullable();
+            $table->string('token')->unique();
             $table->string('url');
             $table->tinyInteger('status')->default(1);
             $table->boolean('is_visible')->default(true);
             $table->boolean('is_featured')->default(false);
-            $table->date('expiration_at');
-            $table->date('published_at');
+            $table->date('expiration_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamp('published_at')->nullable()->useCurrentOnUpdate();
             $table->timestamps();
         });
     }

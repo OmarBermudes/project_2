@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\HubController;
+// use App\Http\Controllers\HubController;
+
+use App\Livewire\Home;
+use App\Livewire\Hubs;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/checkout', [HubController::class, 'index'])->name('checkout.index');
+//Home
+Route::get('/', Home::class)->name('home');
+
+//Checkout
+Route::get('/checkout', Hubs::class)->name('checkout');
+Route::get('/view-hub', [Hubs::class, 'view-hub'])->name('view-hub');
