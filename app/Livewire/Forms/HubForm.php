@@ -14,15 +14,15 @@ class HubForm extends Form
     #[Validate('nullable|string')]
     public $description = '';
 
-    public function store($userId, $token, $url){
-        $this->validate();
+    public function store($userId, $token, $url, $qr){
 
-        Hub::create([
+        return Hub::create([
             'title' => $this->title,
             'description' => $this->description,
             'user_id' => $userId,
             'token' => $token,
             'url' => $url,
+            'qr' => $qr,
         ]);
     }
 }

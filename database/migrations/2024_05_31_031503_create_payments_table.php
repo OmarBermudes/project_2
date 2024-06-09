@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->longText('metadata');
             $table->string('reference_id');
-            $table->tinyInteger('status');
+            $table->string('product_name');
+            $table->string('quantity');
+            $table->string('amount');
+            $table->string('currency');
+            $table->string('payer_name');
+            $table->string('payer_email');
+            $table->string('method');
+            $table->string('status');
+            $table->longText('metadata')->nullable();
             $table->timestamps();
         });
     }

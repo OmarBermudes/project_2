@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Hub extends Model
+class Payment extends Model
 {
     use HasFactory;
 
@@ -17,11 +15,14 @@ class Hub extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'description',
-        'user_id',
-        'token',
-        'url',
-        'qr'
+        'reference_id',
+        'product_name',
+        'quantity',
+        'amount',
+        'currency',
+        'payer_name',
+        'payer_email',
+        'method',
+        'status'
     ];
 }

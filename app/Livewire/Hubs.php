@@ -14,14 +14,14 @@ use Illuminate\Validation\Rule;
 class Hubs extends Component
 {
     public bool $success = false;
-    protected $qrCodes = [];
+    protected $qrCode = null;
     public $userModel = null;
     public HubForm $hub;
     public UserForm $user;
 
     public function render()
     {
-        return view('livewire.hubs.checkout', ['qrCodes'=>$this->qrCodes]);
+        return view('livewire.hubs.checkout', ['qrCodes'=>$this->qrCode]);
     }
 
     public function viewHub()
@@ -30,19 +30,14 @@ class Hubs extends Component
     }
 
     public function create(){
-        // try {
-        //     //code...
-        //     $this->user->store();
-        // } catch (\Exception $e) {
-        //     var_dump($e->getMessage());
-        // }
-
         $this->userModel = $this->user->store();
         $token = $this->tokenGenerator();
         $url = 'https://www.google.com/search?q='.$token;
-        $this->hub->store($this->userModel->id, $token, $url);
 
-        $this->qrCodes['simple'] = $this->qrGenerator($url);
+        $this->qrCode = $this->qrGenerator($url);
+
+        $this->hub->store($this->userModel->id, $token, $url, $this->qrCode);
+
 
         $this->success = true;
 

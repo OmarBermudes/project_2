@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('token')->unique();
             $table->string('url');
+            $table->text('qr');
             $table->tinyInteger('status')->default(1);
             $table->boolean('is_visible')->default(true);
             $table->boolean('is_featured')->default(false);

@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\HubController;
 
+use App\Http\Controllers\PaymentController;
 use App\Livewire\Home;
 use App\Livewire\Hubs;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,14 @@ Route::get('/', Home::class)->name('home');
 
 //Checkout
 Route::get('/checkout', Hubs::class)->name('checkout');
+
+//Payment
+Route::get('paypal',[PaymentController::class, 'paypal'] )->name('paypal');
+Route::get('success',[PaymentController::class, 'success'] )->name('success');
+Route::get('cancel',[PaymentController::class, 'cancel'] )->name('cancel');
+
+// Route::get('/thank-you', function () {
+//     return view('thank-you');
+// })->name('thank-you');
+
 Route::get('/view-hub', [Hubs::class, 'view-hub'])->name('view-hub');
