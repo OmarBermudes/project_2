@@ -80,17 +80,18 @@ class PaymentController extends Controller
         }else if( isset($request) && $request->query(('token')) != null) {
             $referenceId = $request->query(('token'));
             $payment = Payment::firstWhere('reference_id',$referenceId);
-dd($payment);
-            // return redirect()->route('thank-you')->with('payment',$payment);
+
             return view('thank-you')->with('payment',$payment);
 
             // dd($request->query('token'));
+        }else{
+            return redirect()->route('cancel');
         }
         // dd($response);
     }
 
     public function cancel(){
-
+        return "Payment cancelled";
     }
 
 

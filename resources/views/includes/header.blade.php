@@ -1,29 +1,39 @@
-<!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <h1>QR</h1>
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
-                      <li><a href="properties.html">Properties</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
+<header>
+    <div class="header-custom">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="http://nostalx.com/">
+                    <img class="custom-logo" width="5500" height="2440"
+                        src="http://nostalx.com/wp-content/uploads/2024/06/IMG_0419-5.png">
+                </a>
+
+                <ul class="nav justify-content-end  ">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">purchase</a>
+                    </li>
+
+                    <li class="nav-item item-login">
+                        <a
+                            class="custom-login-icon"
+                            role="link"
+                            aria-label="Enlace del icono de la cuenta"
+                            href="#"
+                            target="_self"
+                        >
+                            <img alt=""
+                            src="http://1.gravatar.com/avatar/43503b6b69645720f7a5b227e904e6a4?s=96&amp;d=mm&amp;r=g"
+                            srcset="http://1.gravatar.com/avatar/43503b6b69645720f7a5b227e904e6a4?s=192&amp;d=mm&amp;r=g 2x"
+                            class="custom-avatar avatar-96 photo" height="96" width="96" decoding="async"> </a>
+                    </li>
+                </ul>
+
             </div>
-        </div>
+        </nav>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+</header>

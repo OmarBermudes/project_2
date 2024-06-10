@@ -10,11 +10,12 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('css/fontawesome.css')}} ">
-    <link rel="stylesheet" href="{{ asset('css/templatemo-villa-agency.css')}} ">
-    <link rel="stylesheet" href="{{ asset('css/owl.css')}} ">
-    <link rel="stylesheet" href="{{ asset('css/animate.css')}} ">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    {{-- <link rel="stylesheet" href="{{ asset('css/fontawesome.css')}} "> --}}
+    <link rel="stylesheet" href="{{ asset('css/header.css')}} ">
+    <link rel="stylesheet" href="{{ asset('css/main.css')}} ">
+    {{-- <link rel="stylesheet" href="{{ asset('css/owl.css')}} ">
+    <link rel="stylesheet" href="{{ asset('css/animate.css')}} "> --}}
+    {{-- <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> --}}
 
     @livewireStyles
 </head>
