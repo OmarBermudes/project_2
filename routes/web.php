@@ -2,6 +2,8 @@
 
 // use App\Http\Controllers\HubController;
 
+use App\Http\Controllers\HubController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
 use App\Livewire\Home;
 use App\Livewire\Hubs;
@@ -26,17 +28,27 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //Home
-Route::get('/', Home::class)->name('home');
+Route::view('/', 'auth.login')->name('home');
+
+//login
+Route::view('/login','auth.login')->name('login');
+Route::view('/register','auth.register')->name('register');
+Route::view('/profile','auth.profile')->middleware('auth')->name('profile');
+
+Route::post('/validate-login',[LoginController::class, 'login'] )->name('validate-login');
+Route::post('/validate-register',[LoginController::class, 'register'])->name('validate-register');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Checkout
-Route::get('/checkout', Hubs::class)->name('checkout');
+Route::get('/checkout', 'app.checkout')->name('checkout');
 
 //Payment
 Route::get('paypal',[PaymentController::class, 'paypal'] )->name('paypal');
 Route::get('success',[PaymentController::class, 'success'] )->name('success');
 Route::get('cancel',[PaymentController::class, 'cancel'] )->name('cancel');
 
-Route::get('/mail', function () {
+Route::get('mail', function () {
     try{
         Mail::to(users:'omib.94@gmail.com')->send(new Mailgun());
     }catch(\Exception $e){
