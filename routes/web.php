@@ -5,8 +5,7 @@
 use App\Http\Controllers\HubController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
-use App\Livewire\Home;
-use App\Livewire\Hubs;
+
 use App\Mail\Mailgun;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -40,8 +39,11 @@ Route::post('/validate-register',[LoginController::class, 'register'])->name('va
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//Checkout
-Route::get('/checkout', 'app.checkout')->name('checkout');
+//App
+Route::view('/checkout', 'app.checkout')->name('checkout');
+Route::view('/thank-you', 'app.thank-you')->name('thank-you');
+Route::post('/create-hub',[HubController::class, 'create'] )->name('create-hub');
+
 
 //Payment
 Route::get('paypal',[PaymentController::class, 'paypal'] )->name('paypal');
@@ -60,4 +62,4 @@ Route::get('mail', function () {
 //     return view('thank-you');
 // })->name('thank-you');
 
-Route::get('/view-hub', [Hubs::class, 'view-hub'])->name('view-hub');
+// Route::get('/view-hub', [Hubs::class, 'view-hub'])->name('view-hub');
