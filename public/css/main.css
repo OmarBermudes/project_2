@@ -1,0 +1,60 @@
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #556B2F;
+}
+
+a{
+    color: inherit !important;
+}
+
+.custom-text-warning{
+    color: #FAF0E6;
+}
+
+.bg-img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar-brand > img {
+    width: 5em;
+}
+
+.navbar-main .active{
+    text-decoration: underline wavy;
+    text-underline-offset: 5px;
+}
+
+/* Home */
+.vp-h-min-100{
+    min-height: 100vh;
+}
+
+/* Footer */
+.img-logo {
+    width: 5em;
+}
+
+/* footer{
+    bottom: 0;
+    z-index: -10;
+} */
+
+
+

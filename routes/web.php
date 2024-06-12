@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //Home
-Route::view('/', 'auth.login')->name('home');
+Route::view('/', 'app.home')->name('home');
 
 //login
 Route::view('/login','auth.login')->name('login');
@@ -41,6 +41,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //App
 Route::view('/checkout', 'app.checkout')->name('checkout');
+Route::view('/product', 'app.product')->name('product');
 Route::view('/thank-you', 'app.thank-you')->name('thank-you');
 Route::post('/create-hub',[HubController::class, 'create'] )->name('create-hub');
 
